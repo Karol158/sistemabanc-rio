@@ -104,19 +104,18 @@ def depositar():
             break
     
     if not encontrado:
-           print("conta excluida")
+           print("conta não encontrada")
     
     if conta == numeroconta[i]:
-         saldoatual=saldo[i]+valor
-         saldo.append(saldoatual)
-    
+         saldo[i]=saldo[i]+valor
     inicio = input("Digite 'sair' para voltar para o início: ")
     if inicio == 'sair':
         limpar()
-        menu()  
+        menu() 
+
 def menu():
     print("*****sistema bancário*******")
-    print("\n \n criar conta: '1' \n   alterar conta:'2' \n consultar conta:'3'\n excluir conta:'4' \n inserir'5'\n consultar pix'6'\n depositar'7'\n fazer pix:'8' ")
+    print("\n \n criar conta: '1'\n alterar conta:'2' \n consultar conta:'3'\n excluir conta:'4' \n inserir'5'\n consultar pix'6'\n depositar'7'\n fazer pix:'8' ")
     x = input("o que voce quer fazer?")
     
     if x == '1':
