@@ -111,8 +111,29 @@ def depositar():
     inicio = input("Digite 'sair' para voltar para o início: ")
     if inicio == 'sair':
         limpar()
-        menu() 
-
+        menu()
+def pix():
+     limpar()
+     print("Digite o numero da conta para fazer o pix")
+     valor=int(input("Qual o valor a transferir?"))
+     conta=input("Digite o numero da conta")
+     encontrado = False
+     for i in range(len(numeroconta)):
+         if numeroconta[i] == conta:
+            print(f"Conta: {numeroconta[i]}\nCPF: {cpf[i]}\nNome: {nome[i]}\nSaldo: {saldo[i]}")
+            encontrado = True
+            break
+    
+     if not encontrado:
+           print("conta não encontrada")
+    
+     if conta == numeroconta[i]:
+         saldo[i]=saldo[i]-valor
+         print("Pix realizado")
+     saida = input("Digite 'sair' para voltar para o início: ")
+     if saida == 'sair':
+        limpar()
+        menu()
 def menu():
     print("*****sistema bancário*******")
     print("\n \n criar conta: '1'\n alterar conta:'2' \n consultar conta:'3'\n excluir conta:'4' \n inserir'5'\n consultar pix'6'\n depositar'7'\n fazer pix:'8' ")
@@ -136,6 +157,10 @@ def menu():
     elif x=='7':
         limpar()
         depositar()
-    
+
+    elif x=='8':
+        limpar()
+        pix()
+ 
 menu()
 
